@@ -28,59 +28,7 @@ Open **Cursor Settings → MCP** and add a new server, or edit `~/.cursor/mcp.js
 }
 ```
 
-> **Where to find your API key:** Log in to [app.leaddelta.com](https://app.leaddelta.com) → Settings → API Keys.
-
-### Option B — Local (self-hosted)
-
-**Prerequisites:** Node.js v18+
-
-```bash
-git clone https://github.com/LeadDelta/mcp-server.git
-cd mcp-server
-npm install
-```
-
-Add to `~/.cursor/mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "leaddelta": {
-      "command": "node",
-      "args": [
-        "/absolute/path/to/mcp-server/mcpServer.js",
-        "--leaddelta-api-key",
-        "YOUR_LEADDELTA_API_KEY"
-      ]
-    }
-  }
-}
-```
-
-Restart Cursor after saving. The LeadDelta tools will appear in the MCP tools panel.
-
----
-
-## Setup in Claude Desktop
-
-Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
-
-```json
-{
-  "mcpServers": {
-    "leaddelta": {
-      "command": "node",
-      "args": [
-        "/absolute/path/to/mcp-server/mcpServer.js",
-        "--leaddelta-api-key",
-        "YOUR_LEADDELTA_API_KEY"
-      ]
-    }
-  }
-}
-```
-
----
+> **Where to find your API key:** Log in to [app.leaddelta.com](https://app.leaddelta.com) → Integrations → API Key.
 
 ## Example Usage
 
@@ -97,35 +45,10 @@ Once connected, you can ask your AI assistant:
 
 The server supports two transport protocols:
 
-| Transport | Endpoint | Protocol Version |
-|-----------|----------|-----------------|
-| Streamable HTTP | `/mcp` | 2025-03-26 (recommended) |
-| SSE | `/sse` | 2024-11-05 (legacy) |
+| Transport | Endpoint |
+|-----------|----------|
+| Streamable HTTP | `/mcp` |
 
 Authentication is accepted via:
-- `Authorization: Bearer YOUR_API_KEY` header
-- `x-api-key` header
-- `key` query parameter
+- `Authorization: Bearer YOUR_LEADDELTA_API_KEY` header
 
----
-
-## Self-Hosting
-
-Run the server with HTTP transport:
-
-```bash
-PORT=3002 LEADDELTA_API_KEY=your_key node mcpServer.js --sse
-```
-
-Or with Docker:
-
-```bash
-docker build -t leaddelta-mcp .
-docker run -p 3002:3002 --env-file .env leaddelta-mcp --sse
-```
-
----
-
-## License
-
-MIT — [LeadDelta](https://leaddelta.com)
