@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.leaddelta/mcp-server",
+  "name": "io.github.LeadDelta/mcp-server",
   "title": "LeadDelta MCP Server",
   "description": "MCP server for LeadDelta — manage LinkedIn connections and CRM data via AI assistants.",
   "repository": {
