@@ -1,0 +1,8 @@
+{
+  "name": "leaddelta-mcp-server",
+  "displayName": "LeadDelta MCP Server",
+  "version": "1.0.0",
+  "description": "MCP server for LeadDelta — manage LinkedIn connections and CRM data via AI assistants.",
+  "publisher": "LeadDelta",
+  "mcp": "../mcp.json"
+}

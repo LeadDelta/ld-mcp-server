@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "leaddelta_streamable_http_mcp": {
+      "type": "streamable-http",
+      "url": "https://mcp.leaddelta.com/mcp",
+      "headers": {
+        "Authorization": "Bearer <LEADDELTA_API_KEY>"
+      }
+    }
+  }
+}
